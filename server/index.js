@@ -14,7 +14,6 @@ const io = new Server(server, {
     },
 });
 // the comment from the main branch, must be pulled
-// the comment re-added from the feature/ branch
 io.on("connection", (socket) => {
     console.log(`User Connected: ${socket.id}`);
     // when join room event is emitted, the callback inside runs
