@@ -31,6 +31,7 @@ io.on("connection", (socket) => {
     });
 });
 
+// listen on port 5002
 server.listen(5002, () => {
     console.log("SERVER RUNNING");
 });
