@@ -16,16 +16,16 @@ const io = new Server(server, {
 
 io.on("connection", (socket) => {
     console.log(`User Connected: ${socket.id}`);
-
+    // when join room event is emitted, the callback inside runs
     socket.on("join_room", (data) => {
         socket.join(data);
         console.log(`User with ID: ${socket.id} joined room: ${data}`);
     });
-
+    // when send message event is emitted, the callback inside runs
     socket.on("send_message", (data) => {
         socket.to(data.room).emit("receive_message", data);
     });
-
+    // when disconnect event is emitted, the callback inside runs
     socket.on("disconnect", () => {
         console.log("User Disconnected", socket.id);
     });
